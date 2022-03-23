@@ -9,7 +9,7 @@ interface AppHeaderProps {
   title: ReactNode;
 }
 
-function AppHeader({ title }: AppHeaderProps) {
+export const AppHeader = ({ title }: AppHeaderProps) => {
   const { mode, setMode } = useTheme();
 
   return (
@@ -28,6 +28,4 @@ function AppHeader({ title }: AppHeaderProps) {
       />
     </AppBar>
   );
-}
-
-export { AppHeader };
+};

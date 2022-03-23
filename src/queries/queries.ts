@@ -2,25 +2,20 @@ import { useQuery, useMutation, useQueryClient } from "react-query";
 import { http } from "@/utils";
 import type { Vehicle, VehiclePayload } from "@/types";
 
-export function useVehicles() {
-  return useQuery<Vehicle[], Response>("vehicles", () =>
-    http.get("/api/vehicles")
-  );
-}
+export const useVehicles = () =>
+  useQuery<Vehicle[], Response>("vehicles", () => http.get("/api/vehicles"));
 
-export function useVehicle(id: string) {
-  return useQuery<Vehicle, Response>(["vehicle", id], () =>
+export const useVehicle = (id: string) =>
+  useQuery<Vehicle, Response>(["vehicle", id], () =>
     http.get(`/api/vehicles/${id}`)
   );
-}
 
-export function useCreateVehicle() {
-  return useMutation<Vehicle, Response, VehiclePayload>((body) =>
+export const useCreateVehicle = () =>
+  useMutation<Vehicle, Response, VehiclePayload>((body) =>
     http.post("/api/vehicles", { json: body })
   );
-}
 
-export function useDeleteVehicle() {
+export const useDeleteVehicle = () => {
   const queryClient = useQueryClient();
 
   return useMutation<Vehicle, Response, string, Vehicle[]>(
@@ -50,4 +45,4 @@ export function useDeleteVehicle() {
       },
     }
   );
-}
+};

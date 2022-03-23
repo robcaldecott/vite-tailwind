@@ -1,18 +1,6 @@
-// Some random vehicles
-export interface Vehicle {
-  id: string;
-  manufacturer: string;
-  model: string;
-  type: string;
-  fuel: string;
-  vin: string;
-  color: string;
-  mileage: number;
-  registrationDate: string;
-  registrationNumber: string;
-}
+import type { Vehicle } from "@/types";
 
-const vehicles: Vehicle[] = [
+export const vehicles: Vehicle[] = [
   {
     id: "5e0562c5-a50b-42ff-83e5-4c004c5b639a",
     manufacturer: "Volkswagen",
@@ -1218,7 +1206,7 @@ const vehicles: Vehicle[] = [
 const random = (min: number, max: number) =>
   Math.floor(Math.random() * (max - min)) + min;
 
-function randomVehicles(count: number) {
+export const randomVehicles = (count: number) => {
   const indices = [];
   while (indices.length < count) {
     const index = random(0, vehicles.length);
@@ -1227,24 +1215,19 @@ function randomVehicles(count: number) {
     }
   }
   return indices.map((index) => ({ ...vehicles[index] }));
-}
+};
 
-function manufacturers() {
-  return [...new Set(vehicles.map(({ manufacturer }) => manufacturer))].sort(
-    (a, b) => a.localeCompare(b)
-  );
-}
-
-function fuelTypes() {
-  return [...new Set(vehicles.map(({ fuel }) => fuel))].sort((a, b) =>
+export const manufacturers = () =>
+  [...new Set(vehicles.map(({ manufacturer }) => manufacturer))].sort((a, b) =>
     a.localeCompare(b)
   );
-}
 
-function colors() {
-  return [...new Set(vehicles.map(({ color }) => color))]
+export const fuelTypes = () =>
+  [...new Set(vehicles.map(({ fuel }) => fuel))].sort((a, b) =>
+    a.localeCompare(b)
+  );
+
+export const colors = () =>
+  [...new Set(vehicles.map(({ color }) => color))]
     .filter((color) => color !== "mint green")
     .sort((a, b) => a.localeCompare(b));
-}
-
-export { vehicles, randomVehicles, manufacturers, fuelTypes, colors };
