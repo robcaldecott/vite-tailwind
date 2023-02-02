@@ -6,7 +6,7 @@ interface AppBarProps extends ComponentPropsWithoutRef<"header"> {}
 export const AppBar = ({ className, ...props }: AppBarProps) => (
   <header
     className={clsx(
-      "bg-slate-600 text-white px-4 sm:px-6 shadow-lg h-12 min-h-full flex items-center sticky top-0 z-10",
+      "sticky top-0 z-10 flex h-12 min-h-full items-center bg-slate-600 px-4 text-white shadow-lg sm:px-6",
       className
     )}
     {...props}

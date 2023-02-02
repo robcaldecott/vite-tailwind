@@ -6,12 +6,12 @@ interface BreadcrumbsProps {
 }
 
 export const Breadcrumbs = ({ registrationNumber }: BreadcrumbsProps) => (
-  <nav className="font-sans text-base font-normal mb-4">
+  <nav className="mb-4 font-sans text-base font-normal">
     <ol className="flex space-x-2">
       <li>
         <Link
           to="/"
-          className="text-sky-600 dark:text-sky-300 hover:text-sky-900 dark:hover:text-sky-500 underline"
+          className="text-sky-600 underline hover:text-sky-900 dark:text-sky-300 dark:hover:text-sky-500"
         >
           <FormattedMessage id="home" defaultMessage="Home" />
         </Link>

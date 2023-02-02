@@ -62,12 +62,12 @@ export const Create = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="max-w-3xl mx-auto">
+    <div className="mx-auto max-w-3xl">
       <Breadcrumbs />
 
       <Paper>
         <Text
-          className="p-4 border-b border-b-slate-300 dark:border-b-slate-600 bg-sky-50 dark:bg-sky-900"
+          className="border-b border-b-slate-300 bg-sky-50 p-4 dark:border-b-slate-600 dark:bg-sky-900"
           variant="h2"
           component="h2"
         >
@@ -170,7 +170,7 @@ export const Create = () => {
           {({ resetForm, isSubmitting }) => (
             <Form>
               {/* Field grid */}
-              <div className="p-4 grid grid-cols-12 gap-4">
+              <div className="grid grid-cols-12 gap-4 p-4">
                 <Field
                   name="manufacturer"
                   component={FormikSelect}
@@ -298,7 +298,7 @@ export const Create = () => {
               </div>
 
               {/* Buttons */}
-              <div className="bg-sky-50 dark:bg-sky-900 flex flex-wrap md:flex-nowrap p-4 space-x-4 space-y-4 md:space-y-0 justify-between border-t border-t-slate-300 dark:border-t-slate-600">
+              <div className="flex flex-wrap justify-between space-x-4 space-y-4 border-t border-t-slate-300 bg-sky-50 p-4 dark:border-t-slate-600 dark:bg-sky-900 md:flex-nowrap md:space-y-0">
                 <Button
                   type="button"
                   variant="secondary"
@@ -309,7 +309,7 @@ export const Create = () => {
                   <FormattedMessage id="reset" defaultMessage="Reset" />
                 </Button>
 
-                <div className="flex justify-center space-x-2 basis-full md:basis-auto">
+                <div className="flex basis-full justify-center space-x-2 md:basis-auto">
                   <Button
                     type="button"
                     variant="secondary"

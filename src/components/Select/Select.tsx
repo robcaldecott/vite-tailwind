@@ -24,7 +24,7 @@ export const Select = ({
     </TextFieldLabel>
 
     {/* Select */}
-    <span className="block relative">
+    <span className="relative block">
       <TextFieldInput
         component="select"
         className="appearance-none"
@@ -36,7 +36,7 @@ export const Select = ({
       <ChevronDownIcon
         aria-hidden="true"
         className={clsx(
-          "h-6 w-6 absolute right-2 inset-y-2 pointer-events-none",
+          "pointer-events-none absolute inset-y-2 right-2 h-6 w-6",
           disabled ? "text-slate-300" : "text-slate-500"
         )}
       />

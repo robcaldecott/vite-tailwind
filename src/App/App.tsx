@@ -17,7 +17,7 @@ export const App = () => (
     />
 
     <FilterProvider>
-      <main className="max-w-7xl p-4 mx-auto">
+      <main className="mx-auto max-w-7xl p-4">
         <Suspense fallback={<Fallback />}>
           <Routes>
             <Route path="/" element={<Vehicles />} />

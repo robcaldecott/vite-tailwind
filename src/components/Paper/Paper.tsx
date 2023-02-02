@@ -14,7 +14,7 @@ export const Paper = <C extends ElementType = "div">({
   return (
     <Component
       className={clsx(
-        "bg-white dark:bg-slate-800 shadow-2xl dark:shadow-gray-800 rounded-2xl overflow-hidden",
+        "overflow-hidden rounded-2xl bg-white shadow-2xl dark:bg-slate-800 dark:shadow-gray-800",
         className
       )}
       {...props}

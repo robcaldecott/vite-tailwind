@@ -10,10 +10,10 @@ interface ErrorMessageProps {
 }
 
 export const ErrorMessage = ({ error, action }: ErrorMessageProps) => (
-  <Paper className="p-8 flex flex-col items-center space-y-2 max-w-2xl mx-auto">
+  <Paper className="mx-auto flex max-w-2xl flex-col items-center space-y-2 p-8">
     <ExclamationCircleIcon
       aria-hidden="true"
-      className="text-red-500 h-16 w-16"
+      className="h-16 w-16 text-red-500"
     />
 
     <Text variant="h2" component="h2" align="center">

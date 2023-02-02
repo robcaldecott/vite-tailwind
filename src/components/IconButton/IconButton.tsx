@@ -16,7 +16,7 @@ export const IconButton = ({
 }: IconButtonProps) => (
   <button
     className={clsx(
-      "flex items-center justify-center p-3 rounded-2xl hover:bg-black/5",
+      "flex items-center justify-center rounded-2xl p-3 hover:bg-black/5",
       edge === "end" && "-mr-3",
       edge === "start" && "-ml-3"
     )}

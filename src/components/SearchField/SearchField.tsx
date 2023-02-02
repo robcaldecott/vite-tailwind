@@ -12,11 +12,11 @@ export const SearchField = ({
 }: SearchFieldProps) => (
   <label className={clsx("block", className)}>
     {/* Input */}
-    <span className="block relative">
+    <span className="relative block">
       <TextFieldInput disabled={disabled} rounded hasIcon {...props} />
 
       {/* Icon */}
-      <span className="flex absolute left-2 inset-y-0 items-center">
+      <span className="absolute inset-y-0 left-2 flex items-center">
         <SearchIcon
           aria-hidden="true"
           className={clsx(

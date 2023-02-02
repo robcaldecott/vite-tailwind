@@ -13,11 +13,11 @@ export const TextFieldLabel = ({
 }: TextFieldLabelProps) => (
   <span
     className={clsx(
-      "block font-sans text-sm font-medium mb-1",
+      "mb-1 block font-sans text-sm font-medium",
       disabled
         ? "text-slate-400 dark:text-slate-600"
         : "text-slate-900 dark:text-slate-300",
-      isRequired && "after:content-['*'] after:ml-0.5",
+      isRequired && "after:ml-0.5 after:content-['*']",
       isRequired && {
         "after:text-sky-500 dark:after:text-sky-300": !disabled,
         "after:text-slate-400": disabled,
@@ -53,7 +53,7 @@ export const TextFieldInput = <C extends ElementType = "input">({
   return (
     <Component
       className={clsx(
-        "font-sans text-sm block w-full min-h-[40px] py-2 bg-white dark:bg-slate-900 text-slate-900 dark:text-white border border-slate-300 hover:border-slate-400 focus:border-sky-500 focus:ring-1 focus:ring-sky-500 outline-none placeholder-slate-400 placeholder-shown:italic disabled:bg-slate-50 disabled:text-slate-400 disabled:hover:border-slate-300 disabled:shadow-none transition-colors shadow-sm",
+        "block min-h-[40px] w-full border border-slate-300 bg-white py-2 font-sans text-sm text-slate-900 placeholder-slate-400 shadow-sm outline-none transition-colors placeholder-shown:italic hover:border-slate-400 focus:border-sky-500 focus:ring-1 focus:ring-sky-500 disabled:bg-slate-50 disabled:text-slate-400 disabled:shadow-none disabled:hover:border-slate-300 dark:bg-slate-900 dark:text-white",
         rounded ? "rounded-2xl" : "rounded-md",
         hasIcon ? "pl-9 pr-2" : "px-2",
         className

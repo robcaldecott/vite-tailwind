@@ -16,7 +16,7 @@ export default {
           <Route
             path="/"
             element={
-              <div className="flex flex-col space-y-2 items-start">
+              <div className="flex flex-col items-start space-y-2">
                 <Text variant="h1" component="h1">
                   Home
                 </Text>

@@ -40,8 +40,8 @@ export const ListItem = <C extends ElementType = "li">({
   return (
     <Component
       className={clsx(
-        "py-2 px-4 w-full flex justify-start items-center space-x-2 focus:bg-slate-200 dark:focus:bg-slate-700 outline-none",
-        button && "hover:bg-slate-100/75 dark:hover:bg-slate-700/75 text-left",
+        "flex w-full items-center justify-start space-x-2 py-2 px-4 outline-none focus:bg-slate-200 dark:focus:bg-slate-700",
+        button && "text-left hover:bg-slate-100/75 dark:hover:bg-slate-700/75",
         className
       )}
       {...props}
@@ -61,7 +61,7 @@ export const ListItemText = ({
   secondary,
   ...props
 }: ListItemTextProps) => (
-  <div className={clsx("my-[6px] flex-auto min-w-0", className)} {...props}>
+  <div className={clsx("my-[6px] min-w-0 flex-auto", className)} {...props}>
     <Text component="span" variant="body1" block noWrap>
       {primary}
     </Text>

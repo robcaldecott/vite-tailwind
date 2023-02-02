@@ -19,8 +19,8 @@ export const Fab = <C extends ElementType = "button">({
   return (
     <Component
       className={clsx(
-        "bg-sky-500 hover:bg-sky-700 text-white rounded-2xl inline-flex justify-center items-center shadow-lg",
-        label ? "h-12 px-4 font-sans font-medium text-sm" : "w-14 h-14",
+        "inline-flex items-center justify-center rounded-2xl bg-sky-500 text-white shadow-lg hover:bg-sky-700",
+        label ? "h-12 px-4 font-sans text-sm font-medium" : "h-14 w-14",
         className
       )}
       {...props}

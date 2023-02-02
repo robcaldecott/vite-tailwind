@@ -81,7 +81,7 @@ export const Form: Story = () => {
       }) => (
         <form
           onSubmit={handleSubmit}
-          className="bg-white max-w-2xl mx-auto m-2 p-4 space-y-4 border border-slate-300 shadow-xl rounded-lg"
+          className="m-2 mx-auto max-w-2xl space-y-4 rounded-lg border border-slate-300 bg-white p-4 shadow-xl"
         >
           <TextField
             name="name"

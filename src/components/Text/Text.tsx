@@ -38,11 +38,11 @@ export const Text = <C extends ElementType = "div">({
         color === "secondary" && "text-slate-500 dark:text-slate-300",
         color === "inherit" && "text-inherit",
         // Variants
-        variant === "body1" && "font-normal text-base",
-        variant === "body2" && "font-normal text-sm",
-        variant === "h1" && "font-normal text-3xl",
-        variant === "h2" && "font-normal text-2xl",
-        variant === "h3" && "font-medium text-xl",
+        variant === "body1" && "text-base font-normal",
+        variant === "body2" && "text-sm font-normal",
+        variant === "h1" && "text-3xl font-normal",
+        variant === "h2" && "text-2xl font-normal",
+        variant === "h3" && "text-xl font-medium",
         // Flex grow
         flexGrow === 0 && "flex-grow-0",
         flexGrow === 1 && "flex-grow",
