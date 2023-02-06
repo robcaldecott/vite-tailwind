@@ -3,7 +3,6 @@ import { Meta, StoryObj } from "@storybook/react";
 import { Fab } from "./Fab";
 
 export default {
-  title: "Components/Fab",
   component: Fab,
   args: {
     to: "/",

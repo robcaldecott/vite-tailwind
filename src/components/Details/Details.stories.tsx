@@ -2,7 +2,6 @@ import { Meta, StoryObj } from "@storybook/react";
 import { Details, DetailsLoading } from ".";
 
 export default {
-  title: "Components/Details",
   component: Details,
   args: {
     vehicle: {

@@ -1,13 +1,12 @@
 import { ComponentPropsWithoutRef } from "react";
 import clsx from "clsx";
 
-export interface ButtonProps extends ComponentPropsWithoutRef<"button"> {
+interface ButtonProps extends ComponentPropsWithoutRef<"button"> {
   variant?: "primary" | "secondary" | "error";
 }
 
 export function Button({
   variant = "primary",
-  disabled,
   className,
   ...props
 }: ButtonProps) {
@@ -28,7 +27,6 @@ export function Button({
         // Additional classes
         className
       )}
-      disabled={disabled}
       {...props}
     />
   );

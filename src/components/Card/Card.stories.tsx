@@ -3,9 +3,7 @@ import { Button } from "../Button";
 import { Text } from "../Text";
 import { Card, CardHeader, CardContent, CardActions } from ".";
 
-export default {
-  title: "Components/Card",
-} as Meta<typeof Card>;
+export default { component: Card } as Meta<typeof Card>;
 
 export const Default: StoryObj<typeof Card> = {
   render: () => (

@@ -42,7 +42,6 @@
     "eslint-plugin-storybook": "^0.6.10",
     "eslint-plugin-testing-library": "^5.10.0",
     "jsdom": "^21.1.0",
-    "msw-storybook-addon": "^1.6.1",
     "postcss": "^8.4.12",
     "prettier": "^2.6.0",
     "prettier-plugin-tailwindcss": "^0.2.2",

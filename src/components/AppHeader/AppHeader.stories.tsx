@@ -4,7 +4,6 @@ import { Text } from "../Text";
 import { AppHeader } from ".";
 
 export default {
-  title: "Components/AppHeader",
   component: AppHeader,
   parameters: {
     layout: "fullscreen",

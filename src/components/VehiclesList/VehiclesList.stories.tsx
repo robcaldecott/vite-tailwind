@@ -4,7 +4,6 @@ import { FilterProvider } from "@/providers/FilterProvider";
 import { VehiclesList, VehiclesLoading } from ".";
 
 export default {
-  title: "Components/VehiclesList",
   component: VehiclesList,
   args: {
     vehicles,

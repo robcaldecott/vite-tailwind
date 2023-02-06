@@ -3,7 +3,6 @@ import { Meta, StoryObj } from "@storybook/react";
 import { ResponsiveFab } from ".";
 
 export default {
-  title: "Components/ResponsiveFab",
   component: ResponsiveFab,
   args: {
     icon: StarIcon,

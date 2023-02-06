@@ -4,7 +4,6 @@ import { Button } from "../Button";
 import { ErrorMessage } from ".";
 
 export default {
-  title: "Components/ErrorMessage",
   component: ErrorMessage,
   parameters: {
     controls: {

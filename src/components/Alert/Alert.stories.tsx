@@ -3,7 +3,6 @@ import { Button } from "../Button";
 import { Alert } from ".";
 
 export default {
-  title: "Components/Alert",
   component: Alert,
 } as Meta<typeof Alert>;
 

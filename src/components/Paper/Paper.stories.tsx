@@ -2,9 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import { Text } from "../Text";
 import { Paper } from ".";
 
-export default {
-  title: "Components/Paper",
-} as Meta<typeof Paper>;
+export default { component: Paper } as Meta<typeof Paper>;
 
 type Story = StoryObj<typeof Paper>;
 

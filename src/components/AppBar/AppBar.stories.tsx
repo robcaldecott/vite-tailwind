@@ -3,7 +3,6 @@ import { Text } from "../Text";
 import { AppBar } from ".";
 
 export default {
-  title: "Components/AppBar",
   component: AppBar,
   parameters: {
     layout: "fullscreen",

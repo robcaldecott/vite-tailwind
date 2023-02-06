@@ -9,7 +9,6 @@ import {
 } from ".";
 
 export default {
-  title: "Components/Dialog",
   component: Dialog,
 } as Meta<typeof Dialog>;
 

@@ -3,7 +3,6 @@ import { Paper } from "../Paper";
 import { List, ListItem, ListItemText, ListItemLink } from ".";
 
 export default {
-  title: "Components/List",
   component: List,
   argTypes: {
     children: {

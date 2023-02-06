@@ -14,7 +14,6 @@ function Controlled(args: ComponentProps<typeof TextField>) {
 }
 
 export default {
-  title: "Components/TextField",
   component: TextField,
   render: (args) => <Controlled {...args} />,
 } as Meta<typeof TextField>;

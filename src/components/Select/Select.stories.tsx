@@ -14,7 +14,6 @@ function Controlled(args: ComponentProps<typeof Select>) {
 }
 
 export default {
-  title: "Components/Select",
   component: Select,
   render: (args) => <Controlled {...args} />,
   args: {
