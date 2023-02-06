@@ -14,7 +14,7 @@ export function DetailsLoading() {
   return (
     <Card
       aria-label={intl.formatMessage({
-        id: '41e661',
+        id: "41e661",
         defaultMessage: "Loading vehicle",
       })}
     >
@@ -89,7 +89,7 @@ export function Details(props: DetailsProps) {
     <>
       <Card
         aria-label={intl.formatMessage({
-          id: 'dedf9e',
+          id: "dedf9e",
           defaultMessage: "Vehicle details",
         })}
       >
@@ -165,10 +165,7 @@ export function Details(props: DetailsProps) {
                 setShowDialog(true);
               }}
             >
-              <FormattedMessage
-                id="bb8265"
-                defaultMessage="Delete vehicle"
-              />
+              <FormattedMessage id="bb8265" defaultMessage="Delete vehicle" />
             </Button>
           )}
         </CardActions>

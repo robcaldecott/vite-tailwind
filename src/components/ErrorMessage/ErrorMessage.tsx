@@ -18,10 +18,7 @@ export function ErrorMessage(props: ErrorMessageProps) {
       />
 
       <Text variant="h2" component="h2" align="center">
-        <FormattedMessage
-          id="c67016"
-          defaultMessage="Something went wrong!"
-        />
+        <FormattedMessage id="c67016" defaultMessage="Something went wrong!" />
       </Text>
 
       {props.error && (

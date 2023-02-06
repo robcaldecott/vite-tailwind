@@ -25,12 +25,7 @@ export function VehiclesRoute() {
       <ResponsiveFab
         to="/create"
         icon={PlusIcon}
-        label={
-          <FormattedMessage
-            id="b8eb09"
-            defaultMessage="Create Vehicle"
-          />
-        }
+        label={<FormattedMessage id="b8eb09" defaultMessage="Create Vehicle" />}
       />
     </div>
   );

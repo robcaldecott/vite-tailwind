@@ -14,62 +14,62 @@ function schema(intl: IntlShape) {
   return z.object({
     manufacturer: z.string().min(1, {
       message: intl.formatMessage({
-        id: '306605',
+        id: "306605",
         defaultMessage: "Please select a make",
       }),
     }),
     model: z.string().min(1, {
       message: intl.formatMessage({
-        id: '614bc0',
+        id: "614bc0",
         defaultMessage: "Please enter the model",
       }),
     }),
     type: z.string().min(1, {
       message: intl.formatMessage({
-        id: '03f22e',
+        id: "03f22e",
         defaultMessage: "Please enter the variant",
       }),
     }),
     fuel: z.string().min(1, {
       message: intl.formatMessage({
-        id: '1b9f22',
+        id: "1b9f22",
         defaultMessage: "Please select a fuel type",
       }),
     }),
     color: z.string().min(1, {
       message: intl.formatMessage({
-        id: '5e1ba1',
+        id: "5e1ba1",
         defaultMessage: "Please select a colour",
       }),
     }),
     registrationNumber: z.string().min(1, {
       message: intl.formatMessage({
-        id: '8726e6',
+        id: "8726e6",
         defaultMessage: "Please enter the registration number",
       }),
     }),
     vin: z.string().min(1, {
       message: intl.formatMessage({
-        id: '3cffc9',
+        id: "3cffc9",
         defaultMessage: "Please enter the VIN",
       }),
     }),
     mileage: z
       .number({
         invalid_type_error: intl.formatMessage({
-          id: '5e6cfe',
+          id: "5e6cfe",
           defaultMessage: "Please enter a valid mileage",
         }),
       })
       .min(1, {
         message: intl.formatMessage({
-          id: '4ecf93',
+          id: "4ecf93",
           defaultMessage: "Please enter the mileage",
         }),
       }),
     registrationDate: z.string().min(1, {
       message: intl.formatMessage({
-        id: '61cef9',
+        id: "61cef9",
         defaultMessage: "Please enter the registration date",
       }),
     }),
@@ -114,10 +114,7 @@ export function CreateVehicle(props: CreateVehicleProps) {
         variant="h2"
         component="h2"
       >
-        <FormattedMessage
-          id="f655dd"
-          defaultMessage="Create new vehicle"
-        />
+        <FormattedMessage id="f655dd" defaultMessage="Create new vehicle" />
       </Text>
 
       <form onSubmit={onSubmit}>
@@ -125,7 +122,7 @@ export function CreateVehicle(props: CreateVehicleProps) {
         <div className="grid grid-cols-12 gap-4 p-4">
           <Select
             label={intl.formatMessage({
-              id: '529a05',
+              id: "529a05",
               defaultMessage: "Make",
             })}
             className="col-span-12 md:col-span-4"
@@ -135,7 +132,7 @@ export function CreateVehicle(props: CreateVehicleProps) {
           >
             <option value="" disabled>
               {intl.formatMessage({
-                id: '9d153a',
+                id: "9d153a",
                 defaultMessage: "Select a make",
               })}
             </option>
@@ -148,7 +145,7 @@ export function CreateVehicle(props: CreateVehicleProps) {
 
           <TextField
             label={intl.formatMessage({
-              id: 'a559b8',
+              id: "a559b8",
               defaultMessage: "Model",
             })}
             className="col-span-12 md:col-span-4"
@@ -159,7 +156,7 @@ export function CreateVehicle(props: CreateVehicleProps) {
 
           <TextField
             label={intl.formatMessage({
-              id: '492f18',
+              id: "492f18",
               defaultMessage: "Variant",
             })}
             className="col-span-12 md:col-span-4"
@@ -170,7 +167,7 @@ export function CreateVehicle(props: CreateVehicleProps) {
 
           <Select
             label={intl.formatMessage({
-              id: '94fc56',
+              id: "94fc56",
               defaultMessage: "Fuel",
             })}
             className="col-span-12 md:col-span-6"
@@ -180,7 +177,7 @@ export function CreateVehicle(props: CreateVehicleProps) {
           >
             <option value="" disabled>
               {intl.formatMessage({
-                id: 'f0abfc',
+                id: "f0abfc",
                 defaultMessage: "Select a fuel type",
               })}
             </option>
@@ -193,7 +190,7 @@ export function CreateVehicle(props: CreateVehicleProps) {
 
           <Select
             label={intl.formatMessage({
-              id: 'dfe607',
+              id: "dfe607",
               defaultMessage: "Colour",
             })}
             className="col-span-12 md:col-span-6"
@@ -203,7 +200,7 @@ export function CreateVehicle(props: CreateVehicleProps) {
           >
             <option value="" disabled>
               {intl.formatMessage({
-                id: '56e0cc',
+                id: "56e0cc",
                 defaultMessage: "Select a colour",
               })}
             </option>
@@ -216,7 +213,7 @@ export function CreateVehicle(props: CreateVehicleProps) {
 
           <TextField
             label={intl.formatMessage({
-              id: '17e5b9',
+              id: "17e5b9",
               defaultMessage: "Registration number",
             })}
             className="col-span-12 md:col-span-6"
@@ -227,7 +224,7 @@ export function CreateVehicle(props: CreateVehicleProps) {
 
           <TextField
             label={intl.formatMessage({
-              id: 'e37057',
+              id: "e37057",
               defaultMessage: "VIN",
             })}
             className="col-span-12 md:col-span-6"
@@ -238,7 +235,7 @@ export function CreateVehicle(props: CreateVehicleProps) {
 
           <TextField
             label={intl.formatMessage({
-              id: '87df07',
+              id: "87df07",
               defaultMessage: "Mileage",
             })}
             inputMode="numeric"
@@ -250,7 +247,7 @@ export function CreateVehicle(props: CreateVehicleProps) {
 
           <TextField
             label={intl.formatMessage({
-              id: '22ffd0',
+              id: "22ffd0",
               defaultMessage: "Registration date",
             })}
             type="date"

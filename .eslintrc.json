@@ -9,6 +9,9 @@
   "rules": {
     "formatjs/enforce-default-message": ["error", "literal"],
     "formatjs/enforce-placeholders": "error",
-    "formatjs/enforce-id": ["error"]
+    "formatjs/enforce-id": [
+      "error",
+      { "idInterpolationPattern": "[contenthash:6]" }
+    ]
   }
 }

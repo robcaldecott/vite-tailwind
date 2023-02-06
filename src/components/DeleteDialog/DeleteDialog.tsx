@@ -23,10 +23,7 @@ export function DeleteDialog(props: DeleteDialogProps) {
       aria-describedby="delete-dialog-description"
     >
       <DialogTitle id="delete-dialog-title">
-        <FormattedMessage
-          id="bb8265"
-          defaultMessage="Delete vehicle"
-        />
+        <FormattedMessage id="bb8265" defaultMessage="Delete vehicle" />
       </DialogTitle>
       <DialogContent>
         <DialogContentText id="delete-dialog-description">
