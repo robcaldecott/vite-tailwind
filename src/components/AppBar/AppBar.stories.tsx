@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import { Text } from "../Text";
 import { AppBar } from ".";
 
@@ -8,14 +8,14 @@ export default {
   parameters: {
     layout: "fullscreen",
   },
-} as ComponentMeta<typeof AppBar>;
+} as Meta<typeof AppBar>;
 
-const Template: ComponentStory<typeof AppBar> = ({ children, ...args }) => (
-  <AppBar {...args}>
-    <Text component="h1" variant="h3" flexGrow={1} color="inherit">
-      App Header
-    </Text>
-  </AppBar>
-);
-
-export const Default = Template.bind({});
+export const Default: StoryObj<typeof AppBar> = {
+  render: (args) => (
+    <AppBar {...args}>
+      <Text component="h1" variant="h3" flexGrow={1} color="inherit">
+        App Header
+      </Text>
+    </AppBar>
+  ),
+};

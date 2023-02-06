@@ -1,15 +1,15 @@
-import { ElementType, ComponentPropsWithRef } from "react";
+import { ComponentPropsWithRef, ElementType } from "react";
 import clsx from "clsx";
 
 interface PaperProps<C extends ElementType> {
   component?: C;
 }
 
-export const Paper = <C extends ElementType = "div">({
+export function Paper<C extends ElementType = "div">({
   component,
   className,
   ...props
-}: PaperProps<C> & Omit<ComponentPropsWithRef<C>, keyof PaperProps<C>>) => {
+}: PaperProps<C> & Omit<ComponentPropsWithRef<C>, keyof PaperProps<C>>) {
   const Component = component || "div";
   return (
     <Component
@@ -20,4 +20,4 @@ export const Paper = <C extends ElementType = "div">({
       {...props}
     />
   );
-};
+}

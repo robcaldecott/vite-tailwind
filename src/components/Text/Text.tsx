@@ -15,7 +15,7 @@ interface Props<C extends ElementType> {
 type TextProps<C extends ElementType> = Props<C> &
   Omit<ComponentPropsWithoutRef<C>, keyof Props<C>>;
 
-export const Text = <C extends ElementType = "div">({
+export function Text<C extends ElementType = "div">({
   children,
   variant = "body1",
   color = "primary",
@@ -27,7 +27,7 @@ export const Text = <C extends ElementType = "div">({
   component,
   className,
   ...props
-}: TextProps<C>) => {
+}: TextProps<C>) {
   const Component = component || "div";
   return (
     <Component
@@ -66,4 +66,4 @@ export const Text = <C extends ElementType = "div">({
       {children}
     </Component>
   );
-};
+}

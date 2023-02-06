@@ -1,6 +1,5 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { StarIcon } from "@heroicons/react/solid";
-// import Link from "next/link";
+import StarIcon from "@heroicons/react/24/solid/StarIcon";
+import { Meta, StoryObj } from "@storybook/react";
 import { ResponsiveFab } from ".";
 
 export default {
@@ -8,6 +7,7 @@ export default {
   component: ResponsiveFab,
   args: {
     icon: StarIcon,
+    to: "/",
   },
   argTypes: {
     label: {
@@ -21,15 +21,10 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof ResponsiveFab>;
+} as Meta<typeof ResponsiveFab>;
 
-const Template: ComponentStory<typeof ResponsiveFab> = (args) => (
-  // <Link href="/" passHref>
-  <ResponsiveFab {...args} />
-  // </Link>
-);
-
-export const Star = Template.bind({});
-Star.args = {
-  label: "Responsive",
+export const Star: StoryObj<typeof ResponsiveFab> = {
+  args: {
+    label: "Responsive",
+  },
 };

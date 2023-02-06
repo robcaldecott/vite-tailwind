@@ -1,5 +1,5 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
+import { Meta, StoryObj } from "@storybook/react";
 import { Button } from "../Button";
 import { ErrorMessage } from ".";
 
@@ -11,21 +11,21 @@ export default {
       include: ["error"],
     },
   },
-} as ComponentMeta<typeof ErrorMessage>;
+} as Meta<typeof ErrorMessage>;
 
-const Template: ComponentStory<typeof ErrorMessage> = (args) => (
-  <ErrorMessage {...args} />
-);
+const error = new Error("An error occurred");
 
-const error = { status: 500, statusText: "An error occurred" } as Response;
+type Story = StoryObj<typeof ErrorMessage>;
 
-export const WithoutAction = Template.bind({});
-WithoutAction.args = {
-  error,
+export const WithoutAction: Story = {
+  args: {
+    error,
+  },
 };
 
-export const WithAction = Template.bind({});
-WithAction.args = {
-  error,
-  action: <Button onClick={action("onClick")}>Action</Button>,
+export const WithAction: Story = {
+  args: {
+    error,
+    action: <Button onClick={action("onClick")}>Action</Button>,
+  },
 };

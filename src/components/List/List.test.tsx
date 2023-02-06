@@ -1,6 +1,7 @@
-import { it, expect } from "vitest";
+import { MemoryRouter } from "react-router-dom";
 import { render, screen } from "@testing-library/react";
-import { List, ListItem, ListItemText } from ".";
+import { it, expect } from "vitest";
+import { List, ListItem, ListItemText, ListItemLink } from ".";
 
 it("renders as a list", () => {
   render(
@@ -15,15 +16,17 @@ it("renders as a list", () => {
   expect(screen.getByRole("listitem")).toHaveTextContent(/secondary/i);
 });
 
-it("renders as a button", () => {
+it("renders as a link", () => {
   render(
-    <List>
-      <ListItem button component="button">
-        <ListItemText primary="Primary" secondary="Secondary" />
-      </ListItem>
-    </List>
+    <MemoryRouter>
+      <List>
+        <ListItemLink to="/">
+          <ListItemText primary="Primary" secondary="Secondary" />
+        </ListItemLink>
+      </List>
+    </MemoryRouter>
   );
   expect(screen.getByRole("list")).toBeInTheDocument();
-  expect(screen.getByRole("button")).toHaveTextContent(/primary/i);
-  expect(screen.getByRole("button")).toHaveTextContent(/secondary/i);
+  expect(screen.getByRole("link")).toHaveTextContent(/primary/i);
+  expect(screen.getByRole("link")).toHaveTextContent(/secondary/i);
 });

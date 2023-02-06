@@ -1,20 +1,24 @@
-import { test, expect } from "vitest";
+import { MemoryRouter } from "react-router-dom";
+import StarIcon from "@heroicons/react/24/solid/StarIcon";
 import { render, screen } from "@testing-library/react";
-import { StarIcon } from "@heroicons/react/solid";
+import { test, expect } from "vitest";
 import { Fab } from ".";
 
 test("icon", () => {
-  render(<Fab aria-label="fab" icon={StarIcon} />);
-  expect(screen.getByRole("button", { name: /fab/i })).toBeInTheDocument();
+  render(
+    <MemoryRouter>
+      <Fab to="/" aria-label="fab" icon={StarIcon} />
+    </MemoryRouter>
+  );
+  expect(screen.getByRole("link", { name: /fab/i })).toBeInTheDocument();
 });
 
 test("label", () => {
-  render(<Fab aria-label="fab" icon={StarIcon} label="Label" />);
-  expect(screen.getByRole("button", { name: /fab/i })).toBeInTheDocument();
-  expect(screen.getByText(/label/i)).toBeInTheDocument();
-});
-
-test("anchor", () => {
-  render(<Fab component="a" href="/" icon={StarIcon} aria-label="fab" />);
+  render(
+    <MemoryRouter>
+      <Fab to="/" aria-label="fab" icon={StarIcon} label="Label" />
+    </MemoryRouter>
+  );
   expect(screen.getByRole("link", { name: /fab/i })).toBeInTheDocument();
+  expect(screen.getByText(/label/i)).toBeInTheDocument();
 });

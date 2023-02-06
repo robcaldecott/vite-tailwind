@@ -1,19 +1,19 @@
-import { vi, expect, test } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { expect, test, vi } from "vitest";
 import { TextField } from ".";
 
-test("with a label", () => {
+test("with a label", async () => {
   const handleChange = vi.fn();
   render(<TextField label="Label" value="Value" onChange={handleChange} />);
-  userEvent.type(screen.getByRole("textbox", { name: /label/i }), "test");
+  await userEvent.type(screen.getByRole("textbox", { name: /label/i }), "test");
   expect(handleChange).toHaveBeenCalled();
 });
 
-test("disabled", () => {
+test("disabled", async () => {
   const handleChange = vi.fn();
   render(<TextField label="Label" value="" onChange={handleChange} disabled />);
-  userEvent.type(screen.getByRole("textbox", { hidden: true }), "test");
+  await userEvent.type(screen.getByRole("textbox", { hidden: true }), "test");
   expect(handleChange).not.toHaveBeenCalled();
 });
 

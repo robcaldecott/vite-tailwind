@@ -1,0 +1,14 @@
+{
+  "plugins": ["formatjs", "testing-library"],
+  "extends": [
+    "react-app",
+    "react-app/jest",
+    "plugin:storybook/recommended",
+    "plugin:testing-library/react"
+  ],
+  "rules": {
+    "formatjs/enforce-default-message": ["error", "literal"],
+    "formatjs/enforce-placeholders": "error",
+    "formatjs/enforce-id": ["error"]
+  }
+}

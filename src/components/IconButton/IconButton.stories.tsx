@@ -1,17 +1,17 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { HeartIcon } from "@heroicons/react/solid";
+import HeartIcon from "@heroicons/react/24/solid/HeartIcon";
+import { Meta, StoryObj } from "@storybook/react";
 import { IconButton } from ".";
 
 export default {
   title: "Components/IconButton",
   component: IconButton,
-} as ComponentMeta<typeof IconButton>;
+  args: {
+    icon: HeartIcon,
+  },
+} as Meta<typeof IconButton>;
 
-const Template: ComponentStory<typeof IconButton> = (args) => (
-  <IconButton {...args} icon={HeartIcon} />
-);
-
-export const Default = Template.bind({});
-Default.args = {
-  color: "primary",
+export const Default: StoryObj<typeof IconButton> = {
+  args: {
+    color: "primary",
+  },
 };

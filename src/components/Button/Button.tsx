@@ -1,24 +1,21 @@
-import { ComponentPropsWithoutRef, ElementType } from "react";
+import { ComponentPropsWithoutRef } from "react";
 import clsx from "clsx";
 
-export interface ButtonProps<C extends ElementType> {
-  component?: C;
+export interface ButtonProps extends ComponentPropsWithoutRef<"button"> {
   variant?: "primary" | "secondary" | "error";
 }
 
-export const Button = <C extends ElementType = "button">({
-  component,
+export function Button({
   variant = "primary",
   disabled,
   className,
   ...props
-}: ButtonProps<C> & ComponentPropsWithoutRef<C>) => {
-  const Component = component || "button";
+}: ButtonProps) {
   return (
-    <Component
+    <button
       className={clsx(
         // Common styles
-        "min-w-[72px] rounded-full border-2 px-4 py-2 text-center font-sans text-sm font-medium outline-none transition-colors focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 disabled:border-slate-100 disabled:bg-slate-100 disabled:text-slate-300 dark:ring-offset-slate-900 dark:focus-visible:ring-sky-300 dark:disabled:border-slate-600 dark:disabled:bg-slate-600 dark:disabled:text-slate-400",
+        "min-w-[72px] rounded-full border-2 px-4 py-2 font-sans text-sm font-medium outline-none transition-colors focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 disabled:border-slate-100 disabled:bg-slate-100 disabled:text-slate-300 dark:ring-offset-slate-900 dark:focus-visible:ring-sky-300 dark:disabled:border-slate-600 dark:disabled:bg-slate-600 dark:disabled:text-slate-400",
         // Primary
         variant === "primary" &&
           "border-sky-500 bg-sky-500 text-white hover:border-sky-700 hover:bg-sky-700",
@@ -35,4 +32,4 @@ export const Button = <C extends ElementType = "button">({
       {...props}
     />
   );
-};
+}

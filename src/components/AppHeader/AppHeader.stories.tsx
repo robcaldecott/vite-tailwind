@@ -1,6 +1,6 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { Text } from "@/components";
-import { ThemeProvider } from "@/providers";
+import { Meta, StoryObj } from "@storybook/react";
+import { ThemeProvider } from "@/providers/ThemeProvider";
+import { Text } from "../Text";
 import { AppHeader } from ".";
 
 export default {
@@ -16,33 +16,33 @@ export default {
       </ThemeProvider>
     ),
   ],
-} as ComponentMeta<typeof AppHeader>;
+} as Meta<typeof AppHeader>;
 
-const Template: ComponentStory<typeof AppHeader> = (args) => (
-  <AppHeader {...args} />
-);
+type Story = StoryObj<typeof AppHeader>;
 
-export const Default = Template.bind({});
-Default.args = {
-  title: "Application Title",
+export const Default: Story = {
+  args: {
+    title: "Application Title",
+  },
 };
 
-export const LongTitle = Template.bind({});
-LongTitle.args = {
-  title: "The quick brown fox jumps over the lazy dog",
+export const LongTitle: Story = {
+  args: {
+    title: "The quick brown fox jumps over the lazy dog",
+  },
 };
 
-export const PageContent = Template.bind({});
-PageContent.args = {
-  title: "Scrollable Content Example",
-};
-PageContent.decorators = [
-  (Story) => (
+export const PageContent: Story = {
+  render: (args) => (
     <>
-      <Story />
+      <AppHeader {...args} />
+
       {[...Array(100).keys()].map((key) => (
         <Text key={key}>This is line {key + 1}</Text>
       ))}
     </>
   ),
-];
+  args: {
+    title: "Scrollable Content Example",
+  },
+};

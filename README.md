@@ -5,62 +5,76 @@
 - Tailwind
 - React Intl
 - React Router 6
-- Storybook interactions
+- Storybook
 - Mock Service Worker
 - Dark mode toggle
-- Extensive tests that use stories as the units
+- Extensive tests using React Testing Library
 - Storybook ESLint plugin
 - `react-intl` ESLint plugin to enforce formatted strings
-- `formatjs` babel plugin for automatic messages IDs.
+- `formatjs` ESLint plugin for automatic messages IDs.
 - Prettier
-- Formik
+- React Hook Form with a zod validator
+
+## pnpm required
+
+This project uses `pnpm` so please install:
+
+```bash
+npm install -g pnpm
+```
+
+Then install the project dependencies with:
+
+```
+pnpm install
+```
 
 ## Scripts
 
 Start the app in dev mode:
 
 ```
-npm run dev
+pnpm dev
 ```
 
 Start the test runner:
 
 ```
-npm test
+pnpm test
 ```
 
 Run all tests and generate a coverage report:
 
 ```
-npm run test:coverage
+pnpm test:coverage
 ```
 
 Start Storybook:
 
 ```
-npm run storybook
+pnpm storybook
 ```
 
 Lint the code:
 
 ```
-npm run lint
+pnpm lint
 ```
 
 Check the code formatting:
 
 ```
-npm run format:check
+pnpm format:check
 ```
 
 Format the code using `prettier`:
 
 ```
-npm run format
+pnpm format
 ```
 
 Extract embedded English strings ready for translation:
 
 ```
-npm run intl:extract
+pnpm intl:extract
 ```

@@ -1,14 +1,14 @@
-import { vi, it, expect } from "vitest";
+import HeartIcon from "@heroicons/react/24/solid/HeartIcon";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { HeartIcon } from "@heroicons/react/solid";
+import { expect, it, vi } from "vitest";
 import { IconButton } from ".";
 
-it("renders", () => {
+it("renders", async () => {
   const handleClick = vi.fn();
   render(
     <IconButton icon={HeartIcon} aria-label="Label" onClick={handleClick} />
   );
-  userEvent.click(screen.getByRole("button", { name: /label/i }));
+  await userEvent.click(screen.getByRole("button", { name: /label/i }));
   expect(handleClick).toHaveBeenCalled();
 });

@@ -1,6 +1,6 @@
-import { ComponentMeta, Story, ComponentStory } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import { Paper } from "../Paper";
-import { List, ListItem, ListItemText } from ".";
+import { List, ListItem, ListItemText, ListItemLink } from ".";
 
 export default {
   title: "Components/List",
@@ -12,13 +12,16 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof List>;
+  decorators: [
+    (Story) => (
+      <Paper>
+        <Story />
+      </Paper>
+    ),
+  ],
+} as Meta<typeof List>;
 
-const Template: ComponentStory<typeof List> = (args) => (
-  <Paper>
-    <List {...args} />
-  </Paper>
-);
+type Story = StoryObj<typeof List>;
 
 const data = [
   {
@@ -34,32 +37,34 @@ const data = [
   },
 ];
 
-export const Static = Template.bind({});
-Static.args = {
-  children: (
-    <>
-      {data.map(({ primary, secondary }, index) => (
-        <ListItem key={index}>
-          <ListItemText primary={primary} secondary={secondary} />
-        </ListItem>
-      ))}
-    </>
-  ),
-  dividers: true,
-  padding: false,
+export const Static: Story = {
+  args: {
+    children: (
+      <>
+        {data.map(({ primary, secondary }, index) => (
+          <ListItem key={index}>
+            <ListItemText primary={primary} secondary={secondary} />
+          </ListItem>
+        ))}
+      </>
+    ),
+    dividers: true,
+    padding: false,
+  },
 };
 
-export const Buttons = Template.bind({});
-Buttons.args = {
-  children: (
-    <>
-      {data.map(({ primary, secondary }, index) => (
-        <ListItem key={index} button component="button">
-          <ListItemText primary={primary} secondary={secondary} />
-        </ListItem>
-      ))}
-    </>
-  ),
-  dividers: true,
-  padding: false,
+export const Links: Story = {
+  args: {
+    children: (
+      <>
+        {data.map(({ primary, secondary }, index) => (
+          <ListItemLink key={index} to="/">
+            <ListItemText primary={primary} secondary={secondary} />
+          </ListItemLink>
+        ))}
+      </>
+    ),
+    dividers: true,
+    padding: false,
+  },
 };

@@ -1,26 +1,20 @@
-import type { ComponentPropsWithoutRef, ElementType } from "react";
-import { Fab, FabProps } from "../Fab";
+import { ComponentProps } from "react";
+import { Fab } from "../Fab";
 
-export const ResponsiveFab = <C extends ElementType = "button">({
-  component,
-  label,
+export function ResponsiveFab({
   icon,
+  label,
   ...props
-}: FabProps<C> & Omit<ComponentPropsWithoutRef<C>, keyof FabProps<C>>) => {
+}: ComponentProps<typeof Fab>) {
   return (
     <>
       <div className="fixed right-4 bottom-4 block md:hidden">
-        <Fab component={component as ElementType} icon={icon} {...props} />
+        <Fab icon={icon} {...props} />
       </div>
 
       <div className="fixed right-8 bottom-8 hidden md:block">
-        <Fab
-          component={component as ElementType}
-          icon={icon}
-          label={label}
-          {...props}
-        />
+        <Fab icon={icon} label={label} {...props} />
       </div>
     </>
   );
-};
+}

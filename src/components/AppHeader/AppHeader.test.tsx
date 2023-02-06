@@ -1,12 +1,14 @@
-import { it, expect } from "vitest";
 import { render, screen, within } from "@testing-library/react";
-import { composeStories } from "@storybook/testing-react";
-import * as stories from "./AppHeader.stories";
-
-const { Default } = composeStories(stories);
+import { it, expect } from "vitest";
+import { ThemeProvider } from "@/providers/ThemeProvider";
+import { AppHeader } from ".";
 
 it("renders", () => {
-  render(<Default title="Application Title" />);
+  render(
+    <ThemeProvider>
+      <AppHeader title="Application Title" />
+    </ThemeProvider>
+  );
   const header = within(screen.getByRole("banner"));
   expect(
     header.getByRole("heading", { name: /application title/i })

@@ -1,17 +1,18 @@
-import { DefaultRequestBody, PathParams, rest } from "msw";
+import { DefaultBodyType, PathParams, rest } from "msw";
 import { v4 as uuidv4 } from "uuid";
-import { randomVehicles, Vehicle } from "./vehicles";
+import type { Vehicle } from "@/types";
+import { randomVehicles } from "./vehicles";
 
 let vehicles = randomVehicles(25);
 
 const handlers = [
   // Fetch a list of vehicles
-  rest.get<DefaultRequestBody, PathParams, Vehicle[]>(
+  rest.get<DefaultBodyType, PathParams, Array<Vehicle>>(
     "/api/vehicles",
     (req, res, ctx) => res(ctx.delay(), ctx.json(vehicles))
   ),
   // Fetch details for a specific vehicle
-  rest.get<DefaultRequestBody, { vehicleId: string }, Vehicle>(
+  rest.get<DefaultBodyType, { vehicleId: string }, Vehicle>(
     "/api/vehicles/:vehicleId",
     (req, res, ctx) => {
       const { vehicleId } = req.params;
@@ -34,7 +35,7 @@ const handlers = [
     }
   ),
   // Delete a vehicle
-  rest.delete<DefaultRequestBody, { vehicleId: string }, { id: string }>(
+  rest.delete<DefaultBodyType, { vehicleId: string }, { id: string }>(
     "/api/vehicles/:vehicleId",
     (req, res, ctx) => {
       const { vehicleId } = req.params;

@@ -8,27 +8,29 @@ export interface IconButtonProps
   edge?: "start" | "end";
 }
 
-export const IconButton = ({
+export function IconButton({
   icon: Icon,
   color = "primary",
   edge,
   ...props
-}: IconButtonProps) => (
-  <button
-    className={clsx(
-      "flex items-center justify-center rounded-2xl p-3 hover:bg-black/5",
-      edge === "end" && "-mr-3",
-      edge === "start" && "-ml-3"
-    )}
-    {...props}
-  >
-    <Icon
+}: IconButtonProps) {
+  return (
+    <button
       className={clsx(
-        "h-5 w-5",
-        color === "primary" && "text-sky-500",
-        color === "inherit" && "text-inherit"
+        "flex items-center justify-center rounded-2xl p-3 hover:bg-black/5",
+        edge === "end" && "-mr-3",
+        edge === "start" && "-ml-3"
       )}
-      aria-hidden="true"
-    />
-  </button>
-);
+      {...props}
+    >
+      <Icon
+        className={clsx(
+          "h-5 w-5",
+          color === "primary" && "text-sky-500",
+          color === "inherit" && "text-inherit"
+        )}
+        aria-hidden="true"
+      />
+    </button>
+  );
+}

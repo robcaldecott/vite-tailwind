@@ -1,26 +1,17 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { MemoryRouter } from "react-router-dom";
+import { Meta, StoryObj } from "@storybook/react";
 import { Breadcrumbs } from ".";
 
 export default {
   title: "Components/Breadcrumbs",
   component: Breadcrumbs,
-  decorators: [
-    (Story) => (
-      <MemoryRouter>
-        <Story />
-      </MemoryRouter>
-    ),
-  ],
-} as ComponentMeta<typeof Breadcrumbs>;
+} as Meta<typeof Breadcrumbs>;
 
-const Template: ComponentStory<typeof Breadcrumbs> = (args) => (
-  <Breadcrumbs {...args} />
-);
+type Story = StoryObj<typeof Breadcrumbs>;
 
-export const HomeOnly = Template.bind({});
+export const HomeOnly: Story = {};
 
-export const RegistrationNumber = Template.bind({});
-RegistrationNumber.args = {
-  registrationNumber: "ABC 123",
+export const RegistrationNumber: Story = {
+  args: {
+    registrationNumber: "ABC 123",
+  },
 };

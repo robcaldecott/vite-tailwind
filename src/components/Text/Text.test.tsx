@@ -1,5 +1,5 @@
-import { it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
+import { it, expect } from "vitest";
 import { Text } from ".";
 
 it("renders", () => {

@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { ComponentMeta } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import { Button } from "../Button";
 import {
   Dialog,
@@ -12,21 +11,15 @@ import {
 export default {
   title: "Components/Dialog",
   component: Dialog,
-} as ComponentMeta<typeof Dialog>;
+} as Meta<typeof Dialog>;
 
-export const Controlled = () => {
-  const [open, setOpen] = useState(true);
-  const onClose = () => setOpen(false);
-
-  return (
-    <>
-      <Button onClick={() => setOpen(true)}>Open</Button>
-
+export const Default: StoryObj<typeof Dialog> = {
+  render: (args) => {
+    return (
       <Dialog
-        open={open}
         aria-labelledby="dialog-title"
         aria-describedby="dialog-description"
-        onClose={onClose}
+        {...args}
       >
         <DialogTitle id="dialog-title">
           Use Google&apos;s location service?
@@ -38,14 +31,17 @@ export const Controlled = () => {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button variant="secondary" onClick={onClose}>
+          <Button variant="secondary" onClick={args.onClose}>
             Disagree
           </Button>
-          <Button variant="primary" onClick={onClose}>
+          <Button variant="primary" onClick={args.onClose}>
             Agree
           </Button>
         </DialogActions>
       </Dialog>
-    </>
-  );
+    );
+  },
+  args: {
+    open: true,
+  },
 };

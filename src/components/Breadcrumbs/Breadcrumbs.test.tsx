@@ -1,7 +1,7 @@
-import { it, expect } from "vitest";
-import { render, screen, within } from "@testing-library/react";
 import { IntlProvider } from "react-intl";
 import { MemoryRouter } from "react-router-dom";
+import { render, screen, within } from "@testing-library/react";
+import { it, expect } from "vitest";
 import { Breadcrumbs } from ".";
 
 it("renders with a home link only", () => {

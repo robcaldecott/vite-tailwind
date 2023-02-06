@@ -1,5 +1,5 @@
-import { it, expect } from "vitest";
 import { render, screen, within } from "@testing-library/react";
+import { it, expect } from "vitest";
 import { Card, CardHeader, CardContent, CardActions } from ".";
 
 it("renders", () => {

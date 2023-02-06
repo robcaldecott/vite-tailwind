@@ -1,9 +1,9 @@
-import { it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { expect, it } from "vitest";
 import { ThemeProvider, useTheme } from ".";
 
-const Component = () => {
+function Component() {
   const { mode, setMode } = useTheme();
   return (
     <>
@@ -13,9 +13,9 @@ const Component = () => {
       </button>
     </>
   );
-};
+}
 
-it("toggles theme", () => {
+it("toggles theme", async () => {
   render(
     <ThemeProvider>
       <Component />
@@ -24,11 +24,11 @@ it("toggles theme", () => {
   // Initial mode should be light
   expect(screen.getByText(/mode: light/i)).toBeInTheDocument();
   // Toggle dark
-  userEvent.click(screen.getByRole("button"));
+  await userEvent.click(screen.getByRole("button"));
   expect(screen.getByText(/mode: dark/i)).toBeInTheDocument();
   expect(document.documentElement).toHaveClass("dark");
   // Toggle light
-  userEvent.click(screen.getByRole("button"));
+  await userEvent.click(screen.getByRole("button"));
   expect(screen.getByText(/mode: light/i)).toBeInTheDocument();
   expect(document.documentElement).not.toHaveClass("dark");
 });

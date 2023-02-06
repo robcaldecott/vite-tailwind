@@ -1,47 +1,46 @@
 {
-  "name": "vite-kitchen-sink",
+  "name": "vite-demo",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@fontsource/roboto": "^4.5.3",
-    "@heroicons/react": "^1.0.6",
+    "@heroicons/react": "^2.0.14",
+    "@hookform/resolvers": "^2.9.10",
+    "@tanstack/react-query": "^4.24.4",
     "clsx": "^1.1.1",
-    "formik": "^2.2.9",
+    "ky": "^0.33.2",
     "msw": "^1.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.43.0",
     "react-intl": "^6.2.7",
-    "react-query": "^3.34.16",
     "react-router-dom": "^6.2.2",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "zod": "^3.20.2"
   },
   "devDependencies": {
     "@formatjs/cli": "^6.0.0",
+    "@ianvs/prettier-plugin-sort-imports": "^3.7.1",
     "@storybook/addon-essentials": "^7.0.0-beta.38",
     "@storybook/addon-interactions": "^7.0.0-beta.38",
     "@storybook/react": "^7.0.0-beta.38",
     "@storybook/react-vite": "^7.0.0-beta.38",
-    "@storybook/testing-library": "^0.0.14-next.1",
-    "@storybook/testing-react": "^2.0.0-next.0",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^13.4.0",
-    "@testing-library/react-hooks": "^8.0.1",
     "@testing-library/user-event": "^14.4.3",
-    "@types/node": "^18.11.18",
+    "@types/node": "^18.11.19",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@types/testing-library__jest-dom": "^5.14.5",
     "@types/uuid": "^9.0.0",
     "@vitejs/plugin-react": "^3.1.0",
     "@vitest/coverage-c8": "^0.28.3",
-    "@vitest/ui": "^0.28.3",
     "autoprefixer": "^10.4.4",
-    "babel-plugin-formatjs": "^10.3.18",
-    "cross-env": "^7.0.3",
     "eslint": "^8.11.0",
     "eslint-config-react-app": "^7.0.0",
     "eslint-plugin-formatjs": "^4.6.0",
     "eslint-plugin-storybook": "^0.6.10",
+    "eslint-plugin-testing-library": "^5.10.0",
     "jsdom": "^21.1.0",
     "msw-storybook-addon": "^1.6.1",
     "postcss": "^8.4.12",
@@ -63,31 +62,13 @@
     "preview": "vite preview",
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
-    "test:ci": "cross-env CI=true vitest run --coverage",
+    "test:ci": "CI=true vitest run --coverage",
     "lint": "eslint src .storybook --max-warnings 0",
     "storybook": "storybook dev -p 6006",
     "intl:extract": "formatjs extract \"src/**/*.ts*\" --out-file lang/en.json --ignore \"src/**/*.test.tsx\" --ignore \"src/**/*.stories.tsx\" --ignore \"src/vite-env.d.ts\"",
     "intl:compile": "formatjs compile-folder lang src/i18n",
     "format": "prettier --write src",
     "format:check": "prettier --check src"
-  },
-  "eslintConfig": {
-    "plugins": [
-      "formatjs"
-    ],
-    "extends": [
-      "react-app",
-      "react-app/jest",
-      "plugin:storybook/recommended"
-    ],
-    "rules": {
-      "formatjs/enforce-default-message": [
-        "error",
-        "literal"
-      ],
-      "formatjs/enforce-placeholders": "error",
-      "formatjs/enforce-id": "error"
-    }
   },
   "engines": {
     "node": ">= 14.x",

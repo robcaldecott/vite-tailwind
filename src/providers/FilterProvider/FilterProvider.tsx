@@ -11,20 +11,20 @@ interface FilterProviderProps {
   children: ReactNode;
 }
 
-export const FilterProvider = ({ children }: FilterProviderProps) => {
+export function FilterProvider(props: FilterProviderProps) {
   const [filter, setFilter] = useState("");
 
   return (
     <FilterContext.Provider value={{ filter, setFilter }}>
-      {children}
+      {props.children}
     </FilterContext.Provider>
   );
-};
+}
 
-export const useFilter = () => {
+export function useFilter() {
   const context = useContext(FilterContext);
   if (context === undefined) {
     throw new Error("useFilter must be used inside a FilterProvider");
   }
   return context;
-};
+}

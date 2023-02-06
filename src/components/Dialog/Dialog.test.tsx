@@ -1,15 +1,15 @@
-import { vi, it, expect } from "vitest";
 import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { expect, it, vi } from "vitest";
 import {
   Dialog,
-  DialogTitle,
+  DialogActions,
   DialogContent,
   DialogContentText,
-  DialogActions,
+  DialogTitle,
 } from ".";
 
-it("renders", () => {
+it("renders", async () => {
   const handleClose = vi.fn();
   render(
     <Dialog
@@ -34,10 +34,10 @@ it("renders", () => {
   expect(dialog.getByText(/content/i)).toBeInTheDocument();
   expect(dialog.getByRole("button", { name: /ok/i })).toBeInTheDocument();
   // Close the dialog by clicking on the background
-  userEvent.click(screen.getByRole("presentation"));
+  await userEvent.click(screen.getByRole("presentation"));
   expect(handleClose).toHaveBeenCalled();
   handleClose.mockReset();
   // Close the dialog by pressing the ESC key
-  userEvent.type(document.documentElement, "{esc}");
+  await userEvent.type(document.documentElement, "{Escape}");
   expect(handleClose).toHaveBeenCalled();
 });

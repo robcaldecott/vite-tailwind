@@ -1,21 +1,22 @@
 import { ReactNode } from "react";
-import { MoonIcon, SunIcon } from "@heroicons/react/solid";
+import MoonIcon from "@heroicons/react/24/solid/MoonIcon";
+import SunIcon from "@heroicons/react/24/solid/SunIcon";
+import { useTheme } from "@/providers/ThemeProvider";
 import { AppBar } from "../AppBar";
-import { Text } from "../Text";
 import { IconButton } from "../IconButton";
-import { useTheme } from "@/providers";
+import { Text } from "../Text";
 
 interface AppHeaderProps {
   title: ReactNode;
 }
 
-export const AppHeader = ({ title }: AppHeaderProps) => {
+export function AppHeader(props: AppHeaderProps) {
   const { mode, setMode } = useTheme();
 
   return (
     <AppBar>
       <Text component="h1" variant="h3" color="inherit" flexGrow={1}>
-        {title}
+        {props.title}
       </Text>
 
       {/* Theme switcher. */}
@@ -28,4 +29,4 @@ export const AppHeader = ({ title }: AppHeaderProps) => {
       />
     </AppBar>
   );
-};
+}

@@ -5,7 +5,7 @@ interface DialogProps extends ComponentPropsWithoutRef<"div"> {
   onClose?: () => void;
 }
 
-export const Dialog = ({ open, children, onClose, ...props }: DialogProps) => {
+export function Dialog({ open, children, onClose, ...props }: DialogProps) {
   useEffect(() => {
     const listener = (event: KeyboardEvent) => {
       if (event.key === "Escape" && onClose) {
@@ -40,36 +40,37 @@ export const Dialog = ({ open, children, onClose, ...props }: DialogProps) => {
       </div>
     </div>
   ) : null;
-};
+}
 
-interface DialogTitleProps extends ComponentPropsWithoutRef<"h2"> {}
+export function DialogTitle({
+  children,
+  ...props
+}: ComponentPropsWithoutRef<"h2">) {
+  return (
+    <h2
+      className="p-4 font-sans text-xl font-medium text-slate-900 dark:text-white"
+      {...props}
+    >
+      {children}
+    </h2>
+  );
+}
 
-export const DialogTitle = ({ children, ...props }: DialogTitleProps) => (
-  <h2
-    className="p-4 font-sans text-xl font-medium text-slate-900 dark:text-white"
-    {...props}
-  >
-    {children}
-  </h2>
-);
+export function DialogContent(props: ComponentPropsWithoutRef<"div">) {
+  return <div className="px-4 pb-4" {...props} />;
+}
 
-interface DialogContentProps extends ComponentPropsWithoutRef<"div"> {}
+export function DialogContentText(props: ComponentPropsWithoutRef<"p">) {
+  return (
+    <p
+      className="font-sans text-base font-normal text-slate-500 dark:text-slate-300"
+      {...props}
+    />
+  );
+}
 
-export const DialogContent = (props: DialogContentProps) => (
-  <div className="px-4 pb-4" {...props} />
-);
-
-interface DialogContentTextProps extends ComponentPropsWithoutRef<"p"> {}
-
-export const DialogContentText = (props: DialogContentTextProps) => (
-  <p
-    className="font-sans text-base font-normal text-slate-500 dark:text-slate-300"
-    {...props}
-  />
-);
-
-interface DialogActionsProps extends ComponentPropsWithoutRef<"div"> {}
-
-export const DialogActions = (props: DialogActionsProps) => (
-  <div className="flex items-center justify-end space-x-2 p-2" {...props} />
-);
+export function DialogActions(props: ComponentPropsWithoutRef<"div">) {
+  return (
+    <div className="flex items-center justify-end space-x-2 p-2" {...props} />
+  );
+}

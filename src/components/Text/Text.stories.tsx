@@ -1,14 +1,13 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import { Text } from ".";
 
 export default {
   title: "Components/Text",
   component: Text,
-} as ComponentMeta<typeof Text>;
+} as Meta<typeof Text>;
 
-const Template: ComponentStory<typeof Text> = (args) => <Text {...args} />;
-
-export const Default = Template.bind({});
-Default.args = {
-  children: "Text",
+export const Default: StoryObj<typeof Text> = {
+  args: {
+    children: "Text",
+  },
 };
