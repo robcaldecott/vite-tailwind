@@ -2,17 +2,19 @@ import { Meta, StoryObj } from "@storybook/react";
 import { Button } from "../Button";
 import { Alert } from ".";
 
-export default {
+const meta = {
   component: Alert,
-} as Meta<typeof Alert>;
+} satisfies Meta<typeof Alert>;
 
-export const NoAction: StoryObj<typeof Alert> = {
+export default meta;
+
+export const NoAction: StoryObj<typeof meta> = {
   args: {
     label: "This is an alert without an action.",
   },
 };
 
-export const WithAction: StoryObj<typeof Alert> = {
+export const WithAction: StoryObj<typeof meta> = {
   args: {
     label: "This is an alert with an action button.",
     action: <Button variant="secondary">Action</Button>,
